@@ -125,3 +125,5 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+.history/index_20221225230259.html
+.history/index_20221225230614.html
