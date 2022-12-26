@@ -1,19 +1,15 @@
 * {
+  margin: 0;
+  padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-  height: 600px;
-}
-
-.btnbg {
   background-color: #728C8A;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -23,6 +19,11 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.btnbg {
+  padding: 35px 40px;
+  border-radius: 20px;
 }
 
 .btnbg .keys-container {
