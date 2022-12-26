@@ -21,16 +21,9 @@ body {
           justify-content: center;
 }
 
-.btnbg {
-  padding: 35px 40px;
-  border-radius: 20px;
-}
-
-.btnbg .keys-container {
-  height: 18.875em;
-  width: 45em;
+.container {
+  padding: 2.7rem 5rem;
   margin: 5em auto;
-  padding: 3em 0 0 4.5em;
   position: relative;
   border: 1px solid #160801;
   border-radius: 1em;
@@ -40,65 +33,152 @@ body {
           box-shadow: 0 0 50px rgba(0, 0, 0, 0.5) inset, 0 1px rgba(212, 152, 125, 0.2) inset, 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
-.btnbg .keys-container button {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.container-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #857474;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container-header-h2 {
+  font-size: 1.6rem;
+}
+
+.container-header .column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container-header span {
+  font-weight: 500;
+  margin-right: .9375rem;
+  font-size: 1.19rem;
+}
+
+.container-header input {
+  outline: none;
+  border-radius: 1.875rem;
+}
+
+.container-header-volume-slider input {
+  accent-color: #fff;
+}
+
+.container-header-keys-checkbox input {
+  height: 1.875rem;
+  width: 3.75rem;
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   position: relative;
-  float: left;
+  background: #857474;
 }
 
-.btnbg .keys-container button.black {
-  height: 8em;
-  width: 2em;
-  margin: 0 0 0 -1em;
+.container-header-keys-checkbox input::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: .3125rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  background: #8c8c8c;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.container-header-keys-checkbox input:checked::before {
+  left: 2.1875rem;
+  background: #fff;
+}
+
+.container-keys {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin-top: 40px;
+}
+
+.container-keys button {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.container-keys button.black {
   z-index: 2;
-  border: 1px solid #000;
-  border-radius: 0 0 3px 3px;
-  -webkit-box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.2) inset, 0 -5px 2px 3px rgba(0, 0, 0, 0.6) inset, 0 2px 4px rgba(0, 0, 0, 0.5);
-          box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.2) inset, 0 -5px 2px 3px rgba(0, 0, 0, 0.6) inset, 0 2px 4px rgba(0, 0, 0, 0.5);
-  background: linear-gradient(45deg, #222 0%, #555 100%);
-}
-
-.btnbg .keys-container button.black:active {
-  -webkit-box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.2) inset, 0 -2px 2px 3px rgba(0, 0, 0, 0.6) inset, 0 1px 2px rgba(0, 0, 0, 0.5);
-          box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.2) inset, 0 -2px 2px 3px rgba(0, 0, 0, 0.6) inset, 0 1px 2px rgba(0, 0, 0, 0.5);
-  background: -webkit-gradient(linear, left top, right top, from(#444), to(#222));
-  background: linear-gradient(to right, #444 0%, #222 100%);
-}
-
-.btnbg .keys-container button.white {
-  height: 16em;
-  width: 4em;
-  z-index: 1;
-  border-left: 1px solid #bbb;
-  border-bottom: 1px solid #bbb;
+  width: 44px;
+  height: 140px;
+  margin: 0 -22px 0 -22px;
   border-radius: 0 0 5px 5px;
-  -webkit-box-shadow: -1px 0 0 rgba(255, 255, 255, 0.8) inset, 0 0 5px #ccc inset, 0 0 3px rgba(0, 0, 0, 0.2);
-          box-shadow: -1px 0 0 rgba(255, 255, 255, 0.8) inset, 0 0 5px #ccc inset, 0 0 3px rgba(0, 0, 0, 0.2);
-  background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#fff));
-  background: linear-gradient(to bottom, #eee 0%, #fff 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#333), to(#000));
+  background: linear-gradient(#333, #000);
 }
 
-.btnbg .keys-container button.white:active {
-  border-top: 1px solid #777;
-  border-left: 1px solid #999;
-  border-bottom: 1px solid #999;
-  -webkit-box-shadow: 2px 0 3px rgba(0, 0, 0, 0.1) inset, -5px 5px 20px rgba(0, 0, 0, 0.2) inset, 0 0 3px rgba(0, 0, 0, 0.2);
-          box-shadow: 2px 0 3px rgba(0, 0, 0, 0.1) inset, -5px 5px 20px rgba(0, 0, 0, 0.2) inset, 0 0 3px rgba(0, 0, 0, 0.2);
-  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e9e9e9));
-  background: linear-gradient(to bottom, #fff 0%, #e9e9e9 100%);
+.container-keys button.black:active {
+  -webkit-box-shadow: inset -5px -10px 10px rgba(255, 255, 255, 0.1);
+          box-shadow: inset -5px -10px 10px rgba(255, 255, 255, 0.1);
+  background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#434343));
+  background: linear-gradient(to bottom, #000, #434343);
 }
 
-.btnbg .keys-container button:first-child {
-  border-radius: 5px 0 5px 5px;
+.container-keys button.black span {
+  bottom: 13px;
+  color: #888888;
 }
 
-.btnbg .keys-container button:last-child {
-  border-radius: 0 5px 5px 5px;
+.container-keys button.white {
+  height: 230px;
+  width: 70px;
+  border-radius: 8px;
+  border: 1px solid #000;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(96%, #fff), color-stop(4%, #eee));
+  background: linear-gradient(#fff 96%, #eee 4%);
 }
 
-.btnbg .keys-container button.a, .btnbg .keys-container button.g, .btnbg .keys-container button.f, .btnbg .keys-container button.d, .btnbg .keys-container button.c {
-  margin: 0 0 0 -1em;
+.container-keys button.white:active {
+  -webkit-box-shadow: inset -5px 5px 20px rgba(0, 0, 0, 0.2);
+          box-shadow: inset -5px 5px 20px rgba(0, 0, 0, 0.2);
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));
+  background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+}
+
+.container-keys button span {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  color: #A2A2A2;
+  font-size: 1.13rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container-keys button .key.hide span {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

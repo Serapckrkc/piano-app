@@ -8,36 +8,34 @@
     <link rel="stylesheet" href="/scss/style.css">
 </head>
 <body>
-<div class="btnbg">
-    <header>
-        <h2>Playable PIANO</h2>
-        <div class="column volume-slider">
+<div class="container">
+    <header class="container-header">
+        <h2 class="container-header-h2">SERPIANO</h2>
+        <div class="column container-header-volume-slider">
           <span>Volume</span><input type="range" min="0" max="1" value="0.5" step="any">
         </div>
-        <div class="column keys-checkbox">
+        <div class="column container-header-keys-checkbox">
           <span>Show Keys</span><input type="checkbox" checked>
         </div>
       </header>
-    <div class="keys-container set">
-        <button class="white b"></button>
-        <button class="black as"></button>
-        <button class="white a"></button>
-        <button class="black gs"></button>
-        <button class="white g"></button>
-        <button class="black fs"></button>
-        <button class="white f"></button>
-        <button class="white e"></button>
-        <button class="black ds"></button>
-        <button class="white d"></button>
-        <button class="black cs"></button>
-        <button class="white c"></button>
-        <button class="white e"></button>
-        <button class="black cs"></button>
-        <button class="white c"></button>
-        <button class="black cs"></button>
-        <button class="white c"></button>
-        <button class="black cs"></button>
-        <button class="white c"></button>
+    <div class="container-keys set">
+        <button class="key white" data-key="a"><span>a</span></button>
+        <button class="key black" data-key="w"><span>w</span></button>
+        <button class="key white" data-key="s"><span>s</span></button>
+        <button class="key black" data-key="e"><span>e</span></button>
+        <button class="key white" data-key="d"><span>d</span></button>
+        <button class="key white" data-key="f"><span>f</span></button>
+        <button class="key black" data-key="t"><span>t</span></button>
+        <button class="key white" data-key="g"><span>g</span></button>
+        <button class="key black" data-key="y"><span>y</span></button>
+        <button class="key white" data-key="h"><span>h</span></button>
+        <button class="key black" data-key="u"><span>u</span></button>
+        <button class="key white" data-key="j"><span>j</span></button>
+        <button class="key white" data-key="k"><span>k</span></button>
+        <button class="key black" data-key="o"><span>o</span></button>
+        <button class="key white" data-key="l"><span>l</span></button>
+        <button class="key black" data-key="p"><span>p</span></button>
+        <button class="key white" data-key=";"><span>;</span></button>
     </div>
 </div>
 </body>
