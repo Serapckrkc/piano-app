@@ -1,12 +1,12 @@
-const containerKeys = document.querySelectorAll(".container-keys .key")
-const containerVolumeSlider = document.querySelector(".container-header-volume-slider input")
-const containerCheckbox = document.querySelector(".container-header-keys-checkbox input")
+const containerKeys = document.querySelectorAll(".container-keys .key");
+const containerVolumeSlider = document.querySelector(".container-header-volume-slider input");
+const containerCheckbox = document.querySelector(".container-header-keys-checkbox input");
 
 let allKeys = [],
-audio = new Audio(`tunes/a.wav`);
+audio = new Audio(`audios/a.wav`);
 
 const playTune = (key) => {
-   audio = new Audio(`audios/${key}.wav`)
+   audio.src = (`audios/${key}.wav`);
    audio.play();
 
    const clickedKey = document.querySelector(`[data-key="${key}"]`);
@@ -21,7 +21,7 @@ containerKeys.forEach(key =>{
     key.addEventListener("click", () => playTune(key.dataset.key));
 });
 
-//Klavyeye basılan tuş dizinin içerisinde ise playTune fonksiyonunu çağırır ve çalıştırır.
+//Klavyeye basılan tuş, dizinin içerisinde ise playTune fonksiyonunu çağırır ve çalıştırır.
 const pressedKey = (e) => {
     if(allKeys.includes(e.key)){
         playTune(e.key);
@@ -29,3 +29,10 @@ const pressedKey = (e) => {
 }
 
 document.addEventListener("keydown", pressedKey);
+
+// Volume settings
+const handleVol = (e) => {
+    audio.volume = e.target.value;
+}
+
+containerVolumeSlider.addEventListener("input", handleVol);
