@@ -8,7 +8,8 @@ audio = new Audio(`audios/a.wav`);
 const playTune = (key) => {
    audio.src = (`audios/${key}.wav`);
    audio.play();
-
+   
+   //Tıklanan tuşa active class'ı atama işlemi yaparak belirli süre geçtikten sonra active class'ını kaldırma
    const clickedKey = document.querySelector(`[data-key="${key}"]`);
    clickedKey.classList.add("active");
    setTimeout(() => {
@@ -30,7 +31,7 @@ const pressedKey = (e) => {
 
 document.addEventListener("keydown", pressedKey);
 
-// Volume settings
+// Ses Ayarını yapma
 const handleVol = (e) => {
     audio.volume = e.target.value;
 }
