@@ -20,3 +20,12 @@ containerKeys.forEach(key =>{
     allKeys.push(key.dataset.key);
     key.addEventListener("click", () => playTune(key.dataset.key));
 });
+
+//Klavyeye basılan tuş dizinin içerisinde ise playTune fonksiyonunu çağırır ve çalıştırır.
+const pressedKey = (e) => {
+    if(allKeys.includes(e.key)){
+        playTune(e.key);
+    }
+}
+
+document.addEventListener("keydown", pressedKey);
