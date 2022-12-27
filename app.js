@@ -9,14 +9,14 @@ const playTune = (key) => {
    audio.src = (`audios/${key}.wav`);
    audio.play();
    
-   //Tıklanan tuşa active class'ı atama işlemi yaparak belirli süre geçtikten sonra active class'ını kaldırma
+   //Tıklanan tuşa active class'ı atama işlemi yaparak belirli süre geçtikten sonra active class'ını kaldırma işlemi
    const clickedKey = document.querySelector(`[data-key="${key}"]`);
    clickedKey.classList.add("active");
    setTimeout(() => {
     clickedKey.classList.remove("active");
    }, 150);
 }
-
+// allKeys dizisine data-key değerlerini ekleyerek playTune fonksiyonunu çağırma işlemi
 containerKeys.forEach(key =>{
     allKeys.push(key.dataset.key);
     key.addEventListener("click", () => playTune(key.dataset.key));
@@ -28,12 +28,16 @@ const pressedKey = (e) => {
         playTune(e.key);
     }
 }
-
-document.addEventListener("keydown", pressedKey);
-
-// Ses Ayarını yapma
+// Ses Ayarını yapma işlemi
 const handleVol = (e) => {
     audio.volume = e.target.value;
 }
+// Tuşların üzerindeki notaları gizle/göster işlemi
+const showHide = () => {
+    containerKeys.forEach(key => key.classList.toggle("hide"));
+}
 
+
+document.addEventListener("keydown", pressedKey);
 containerVolumeSlider.addEventListener("input", handleVol);
+containerCheckbox.addEventListener("click", showHide);

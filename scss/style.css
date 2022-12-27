@@ -178,7 +178,7 @@ body {
           align-items: center;
 }
 
-.container-keys button .key.hide span {
+.container .key.hide span {
   display: none;
 }
 /*# sourceMappingURL=style.css.map */

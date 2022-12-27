@@ -121,14 +121,14 @@
             justify-content: center;
             align-items: center;
           }
-          .key{
-            &.hide{
-              span{
-                display: none;
-              }
-            }
-          }
        } 
      }
+     .key{
+      &.hide{
+        span{
+          display: none;
+        }
+      }
+    }
  }
   
